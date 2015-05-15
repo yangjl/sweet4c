@@ -2,7 +2,7 @@
 title: "Pipeline"
 author: "Jinliang Yang"
 date: "May 15, 2015"
-output: html_document
+output: rmarkdown::tufte_handout
 ---
 
 # Analysis Pipeline and source codes
