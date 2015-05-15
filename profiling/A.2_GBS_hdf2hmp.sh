@@ -1,3 +1,5 @@
+### Jinliang Yang
+### convert HDF5 format to hapmap: running on farm
 
 # load modules
 module load gcc jdk/1.8 tassel/5

@@ -6,7 +6,7 @@ library("data.table", lib="~/bin/Rlib/")
 library("GenABEL.data", lib="~/bin/Rlib/")
 library("GenABEL", lib="~/bin/Rlib/")
 
-load("cache/gwas_res.RData")
+ob <- load("cache/gwas_res.RData")
 res1 <- results(res1)
 res1$qval <- p.adjust(res1$P1df, method = "fdr")
 res2 <- results(res2)
@@ -21,14 +21,19 @@ write.table(res2.mm[, 1:11], "data/Table_gwas_tkw.txt", sep="\t", quote=FALSE)
 
 pdf("graphs/Figure_results.pdf", width=10, height=5)
 par(mfrow=c(1,2))
-plot(x=res1.mm$Position, y=-log10(res1.mm$Pc1df), xlab="Chromosome 5", main="Ten Kernel Weight",
-     ylab="-log10(q-value)", pch=19, col="cadetblue")
+plot(x=res1.mm$Position, y=-log10(res1.mm$Pc1df), xlab="Chromosome 5", main="Ten Kernel Weight", ylim=c(0,3),
+     ylab=expression(paste(-log[10], "(",italic(q), -value, ")")), pch=19, col="cadetblue", xaxt="n")
+axis(1, at=c(122000000, 124000000, 126000000, 128000000, 130000000, 132000000), 
+     labels=c("122M","124M","126M","128M","130M","132M"))
 abline(v=127466000, col="blue", lty=2, lwd=2)
 abline(h=-log10(0.01), col="red", lty=2, lwd=2)
 #S5_128108485 B73=T
 
-plot(x=res2.mm$Position, y=-log10(res2.mm$Pc1df), xlab="Chromosome 5", main="Total Kernel Weight",
-     ylab="-log10(q-value)", pch=19, col="cadetblue")
+##?plotmath
+plot(x=res2.mm$Position, y=-log10(res2.mm$Pc1df), xlab="Chromosome 5", main="Total Kernel Weight", ylim=c(0,3),
+         ylab=expression(paste(-log[10], "(",italic(q), -value, ")")), pch=19, col="cadetblue", xaxt="n")
+axis(1, at=c(122000000, 124000000, 126000000, 128000000, 130000000, 132000000), 
+     labels=c("122M","124M","126M","128M","130M","132M"))
 abline(v=127466000, col="blue", lty=2, lwd=2)
 abline(h=-log10(0.01), col="red", lty=2, lwd=2)
 #S5_127255673 B73=A
