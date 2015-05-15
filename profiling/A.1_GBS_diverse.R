@@ -3,7 +3,7 @@
 ### find association for the sweet gene
 
 
-allzea <- read.csv("~/Documents/Github/SeeDs/data/AllZeaGBSv2.7_publicSamples_metadata20140411.csv")
+allzea <- read.csv("data/AllZeaGBSv2.7_publicSamples_metadata20140411.csv")
 table(allzea$Project)
 table(allzea$GermplasmSet)
 ames282 <- subset(allzea, Project %in% "Ames282") 
