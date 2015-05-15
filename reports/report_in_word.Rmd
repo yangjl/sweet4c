@@ -2,7 +2,7 @@
 title: "Regional association scanning"
 author: "Jinliang Yang"
 date: "May 15, 2015"
-output: pdf_document
+output: word_document
 ---
 
 # Results
@@ -10,9 +10,9 @@ With the control of the population structure and polygenic effects of background
 
 # Materials and Methods
 ## Regional association study
-A maize diversity panel composed of 282 inbred lines was employed for the regional association study. To conduct the analysis, we obtained Genotype-By-Sequencing (GBS) data from panzea (www.panzea.org) and obtained phenotypic data from Flint-Garcia et al., 2009 [^flint-garcia]. The SNPs data were filtered with minor allele frequency (MAF) > 0.05 and allele missing rate < 50%. After filtering, a total of 306,190 SNPs were remaining, including 79 SNPs in a 10-Mb region surrounding the ZmSWEET4c gene. 
+A maize diversity panel composed of 282 inbred lines was employed for the regional association study. To conduct the analysis, we obtained Genotype-By-Sequencing (GBS) data from panzea (www.panzea.org) and obtained phenotypic data from Flint-Garcia et al., 2009 [^flint-garcia]. The SNPs data were filtered with minor allele frequency (MAF) > 0.05 and allele missing rate < 50%. After filtering, a total of 306,190 SNPs were remaining, including 349 SNPs in a 10-Mb region surrounding the ZmSWEET4c gene. 
 
-Association study with the mixed-model method was conducted using an R [^R] add-on package "GenABEL" [^GenABEL]. First of all, a kinship matrix was estimated from the genomic data to control population structure. Secondly, genome-wide polygenic effects were computed with the function "polygenic" for controlling background QTLs. Finally, the 79 SNPs near zmSWEET4c gene were tested one-by-one as the fixed effect and polygenic QTL effects derived from previous step were fitted as random effects using the function of "mmscore". 
+Association study with the mixed-model method was conducted using an R [^R] add-on package "GenABEL" [^GenABEL]. First of all, a kinship matrix was estimated from the genomic data to control population structure. Secondly, genome-wide polygenic effects were computed with the function "polygenic" for controlling background QTLs. Finally, the 349 SNPs near zmSWEET4c gene were tested one-by-one as the fixed effect and polygenic QTL effects derived from previous step were fitted as random effects using the function of "mmscore". 
 
 # Figure legend
 Figure: Regional association scanning results. Vertical dashed blue lines indicate the center of the ZmSWEET4c gene and horizontal red lines indicate the threshold of FDR=0.01. Q-value represents the corrected p-values with FDR control. 
